@@ -1,0 +1,576 @@
+<html>
+<head>
+  <title>Covid Portal </title> 
+  <link rel = "shortcut icon" href="favicon.ico" type="image/x-icon"/>
+	<meta charset="UTF-8">
+  <meta name="description" content="shivansh singh">
+  <meta name="keywords" content="shivansh,shiva,shivansh singh">
+  <meta name="author" content="Shivansh Singh Bhadouria">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.js"></script>
+  <script>//FETCHING API DATA
+      fetch('https://api.apify.com/v2/key-value-stores/toDWvRj1JpTXiM8FF/records/LATEST?disableRedirect=true').then((apidata)=>{
+        console.log(apidata);
+        return apidata.json();
+      }).then( (readable_data)=> {
+         active_cases =readable_data.activeCases;
+         recovered_cases = readable_data.recovered;
+         total_cases = readable_data.totalCases;
+         total_deaths = readable_data.deaths;
+        document.getElementById("active_cases").innerHTML=active_cases.toLocaleString('en', {useGrouping:true});
+        document.getElementById("recovered_cases").innerHTML = recovered_cases.toLocaleString('en', {useGrouping:true});
+        document.getElementById("total_cases").innerHTML=total_cases.toLocaleString('en', {useGrouping:true});
+        document.getElementById("total_deaths").innerHTML=total_deaths.toLocaleString('en', {useGrouping:true});
+        co
+      }).catch((eoor)=>{
+        console.log(error);
+      })
+  </script>
+
+  <script>
+      $(document).ready(function(){
+
+        $("#find_blood_button").click(function(){
+         $(".find_buttons_div").fadeOut(500,function(){
+           $(".find_blood_form_div").fadeIn(1000);
+            });
+         });
+        $("#find_blood_button").click(function(){
+          $(".donate_buttons_div").fadeOut(400);
+        });
+        
+
+
+         $("#find_plasma_button").click(function(){
+          $(".find_buttons_div").fadeOut(500,function(){
+           $('.find_plasma_form_div').fadeIn(1000);
+          });
+         });
+         $("#find_plasma_button").click(function(){
+          $(".donate_buttons_div").fadeOut(500);
+         });
+
+
+
+          $("#donate_blood_button").click(function(){
+           $(".find_buttons_div").fadeOut(500,function(){ 
+            $('.donate_blood_form_div').fadeIn(1000);
+           });
+          });
+          $("#donate_blood_button").click(function(){
+            $(".donate_buttons_div").fadeOut(500)
+          });
+
+
+
+          $("#donate_plasma_button").click(function(){
+           $(".find_buttons_div").fadeOut(500,function(){
+            $('.donate_plasma_form_div').fadeIn(1000);
+           });
+          });
+          $("#donate_plasma_button").click(function(){
+             $(".donate_buttons_div").fadeOut(500)
+          });
+
+
+
+        $("#find_blood_button").mouseenter(function(){
+            $(this).animate({fontSize:"1.5em",opacity:"1"},250);
+          return false;
+        });
+        $("#find_blood_button").mouseleave(function(){
+            $(this).animate({fontSize:"1.25em",opacity:"0.8"},250);
+          return false;
+        });
+        $("#find_plasma_button").mouseenter(function(){
+            $(this).animate({fontSize:"1.5em",opacity:"1"},250);
+          return false;
+        });
+        $("#find_plasma_button").mouseleave(function(){
+            $(this).animate({fontSize:"1.25em",opacity:"0.8"},250);
+          return false;
+        });
+
+
+
+        $("#donate_blood_button").mouseenter(function(){
+            $(this).animate({fontSize:"1.5em",opacity:"1"},250);
+          return false;
+        });
+        $("#donate_blood_button").mouseleave(function(){
+            $(this).animate({fontSize:"1.25em",opacity:"0.8"},250);
+          return false;
+        }); 
+        $("#donate_plasma_button").mouseenter(function(){
+            $(this).animate({fontSize:"1.5em",opacity:"1"},250);
+          return false;
+        });
+        $("#donate_plasma_button").mouseleave(function(){
+            $(this).animate({fontSize:"1.25em",opacity:"0.8"},250);
+          return false;
+        }); 
+        $("#helpline_button").mouseenter(function(){
+            $(this).animate({fontSize:"1.5em",opacity:"1"},250);
+          return false;
+        });
+        $("#helpline_button").mouseleave(function(){
+            $(this).animate({fontSize:"1.25em",opacity:"0.8"},250);
+          return false;
+        });
+
+
+
+        $(".submit_button").mouseenter(function(){
+            $(this).animate({fontSize:"1.4em",opacity:"1",height:"30px",color:"white"},250);
+          return false;
+        });
+        $(".submit_button").mouseleave(function(){
+            $(this).animate({fontSize:"1.2em",opacity:"0.8",height:"28px"},250);
+          return false;
+        });
+
+        
+
+      });//HOVER ANIMATIONS
+  </script> 
+
+
+</head>
+
+  <style>
+
+    body 
+    {
+      background-image: url("pic1.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-bottom: 0px;
+      margin-left: 0px  
+    }
+    html
+    {
+      scroll-behavior: smooth;
+    }
+
+    #heading
+    {
+      text-decoration: none;
+      color: black;
+      font-family: Helvetica;
+      font-size: 70px;
+      padding:13px;
+    }
+
+    .nav_panel
+    {
+      text-decoration: none;
+      color: black;
+      font-family: Helvetica;
+      padding:13px;
+      text-align: center;
+      
+    }
+    #nav_link_1
+    {
+      float:right;
+    }
+    #nav_link_2
+    {
+      float:right;
+    }
+
+    .heading_div
+    {
+     width: 100%;
+     height: 15%;
+     background-color: #ffffff;
+     padding-top: 2px;
+     
+     }
+
+    .donate_buttons_div
+    {
+    overflow:auto;
+    background-color: rgba(45, 41, 45, 0.7) ;
+    opacity: 0.5px;
+    border:5px solid black; 
+    border-radius: 5px;
+
+    width: 750px;
+    height: 120px;
+
+    margin-top:80px;
+    margin-left:310px;
+    
+    justify-content: center;
+    }
+
+
+    .find_buttons_div
+    {
+    overflow:auto;
+    background-color:  rgba(45, 41, 45, 0.7) ;
+    opacity: 0.5px;
+    border:5px solid black; 
+    border-radius: 5px;
+
+    width: 600px;
+    height: 120px;
+
+    margin-top:80px;
+    margin-left:380px;
+    
+    justify-content: center;
+    }
+
+
+    .find_blood_form_div
+    {
+      border: 5px solid grey;
+      background-color: rgba(45, 41, 45, 0.7);
+      display:none;
+      border-radius: 10px;
+      width:400px;
+      height:450px;
+
+      margin-top: 40px;
+      margin-left: 490px;
+      padding:20px;
+      padding-top: 10px;
+      padding-left: 30px
+    }
+
+    .find_plasma_form_div
+    {
+      border: 5px solid grey;
+      background-color: rgba(45, 41, 45, 0.7);
+      display:none;
+      border-radius: 10px;
+      width:400px;
+      height:450px;
+
+      margin-top: 40px;
+      margin-left: 490px;
+      padding:20px;
+      padding-top: 10px;
+      padding-left: 30px;
+    }
+
+    .donate_blood_form_div
+    {
+      border: 5px solid grey;
+      background-color: rgba(45, 41, 45, 0.7);
+      display:none;
+      border-radius: 10px;
+      width:400px;
+      height:450px;
+
+      margin-top: 50px;
+      margin-left: 490px;
+      padding:20px;
+      padding-top: 10px;
+      padding-left: 30px;
+    }
+
+    .donate_plasma_form_div
+    {
+      border: 5px solid grey;
+      background-color: rgba(45, 41, 45, 0.7);
+      display:none;
+      border-radius: 10px;
+      width:400px;
+      height:470px;
+
+      margin-top: 30px;
+      margin-left: 490px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 10px;
+    }
+
+    
+    input[type=text]
+    {
+      padding:5px;
+      margin-top:3px;
+      margin: 3px;
+      margin-left: 10px;
+      border-radius:9px;
+      border: 0px solid white;
+      width: 250px;
+    }
+    input[type=number]
+    {
+      padding:5px;
+      margin-top:3px;
+      margin: 3px;
+      margin-left: 10px;
+      border-radius:9px;
+      border: 0px solid white;
+      width: 250px;
+    }
+
+    input[type=checkbox]
+    {
+      padding:5px;
+      margin-top:3px;
+      margin: 3px;
+      margin-left: 10px;
+      border-radius: 15px;
+      box-shadow: 0 0 2px 1px;
+      border: 0px solid white;
+    }
+    .submit_button
+    {
+      color: white; 
+      border:2px solid black;
+      background-color:#4c748f; 
+      font-family:Helvetica; 
+      font-size: 18px; 
+      opacity: 0.8;
+      border-radius: 7px;
+      margin-left: 160px;
+      margin-top: 10px;
+    }
+    .section_2
+    {
+      overflow: auto;
+      height: 250px;
+      background-color: black;
+      text-align: center;
+      font-family: Helvetica;
+      padding-top: 20px;  
+      clear:right;
+    }
+
+    #section_2_subsection_1
+    {
+      background-color: black;
+      border : 4px solid black;
+      border-radius: 10px;
+      width:310px;
+      margin-top: 15px;
+      margin-left: 200px;
+      padding: 10px;
+      padding-bottom: 20px;
+      color: white;
+      float:left;
+    }
+
+    #section_2_subsection_2
+    {
+      background-color: black;
+      border : 4px solid black;
+      border-radius: 10px;
+      width:310px;
+      margin-top:15px;
+      margin-right: 200px;
+      padding: 10px;
+      padding-bottom: 20px;
+      color: white;
+      float:right;
+    }
+  </style>	
+
+
+<body>
+
+        <!--________________________________________________________HEAD PANEL_______________________________________________________-->
+
+    <div class=heading_div> 
+
+      <p>
+        <b> <a id=heading href="index.html">Covid Portal</a> 
+            <a class=nav_panel id=nav_link_1 href="https://dashboard.cowin.gov.in/">Covid Stats</a> 
+            <a class=nav_panel id=nav_link_2 href="https://dashboard.cowin.gov.in/">Vaccinatoin Stats</a> 
+       </b>
+       <div style="background-color: black;height: 8px;margin-top:18px"><p></p></div>
+      </p>
+       
+    </div>
+       <!--______________________________________________________ _/HEAD PANEL_______________________________________________________-->
+
+
+       <!--_________________________________________________________BUTTONS__________________________________________________________-->
+    <div style="justify-content: center;align-items: center;height: 500px;margin-bottom: 50px ">
+     <div class=find_buttons_div> 
+      <button id="find_plasma_button" style="color: white;border:3px solid black;background-color:#2d292d;margin-top: 25px;margin-left:50px;margin-right: 0px ;padding: 20px;font-family:Helvetica;font-size: 20px;opacity: 0.8;border-radius: 7px;"><b>Find Plasma Donor</b></button>
+      <button id="find_blood_button" style="color: white;border:3px solid black;background-color:#2d292d;margin-top: 25px;margin-right: 0px;margin-left:50px;padding: 20px;font-family:Helvetica;font-size: 20px;opacity: 0.8;border-radius: 7px;" ><b>Find Blood Donor</b></button>
+     </div>
+ 
+
+   
+    <div class=donate_buttons_div> 
+      <button id=donate_plasma_button style="background-color:#2d292d;text-decoration: none;color: white;border:3px solid black;margin-top: 25px;margin-left: 50px;padding: 20px;font-family:Helvetica;font-size: 20px;opacity: 0.8;border-radius: 7px;"><b>Donate Plasma</b></button>
+
+      <button id=donate_blood_button style="background-color:#2d292d;text-decoration: none;color: white;border:3px solid black; margin-top: 25px;margin-left: 50px;padding: 20px;font-family:Helvetica;font-size: 20px;opacity: 0.8;border-radius: 7px;" ><b>Donate Blood</b></button>
+
+      <button id=helpline_button style="background-color:#2d292d;text-decoration: none;color: white;border:3px solid black;margin-top:25px;margin-left: 50px;padding: 20px;font-family:Helvetica;font-size: 20px;opacity: 0.8;border-radius: 7px;"><b><a href="helpline.html" style="text-decoration: none;color: white">GOI Helpline<a></b></button>
+    </div>
+  
+    <!--_______________________________________________________/BUTTONS__________________________________________________________-->
+    
+
+    <!--________________________________________________________FORMS____________________________________________________________-->
+    <div class=find_blood_form_div method=POST>
+      <form  action="find_blood.php" method=POST>
+        <div style="background-color:#2d292d ;padding-top:10px; padding-bottom:10px ;margin:5px;margin-bottom: 10px;" align="center"><span style="font-family: Helvetica;font-size: 20px;color: white"><b>Fill in the Patient's details</b></span></div><hr>
+        <span style="font-size: 18px;font-family:Helvetica ;color: white;padding-left: 15px"  > First Name<br> </span>
+        <input type=text placeholder="Enter your Name" name="first_name" style="margin-top:8  px" required><br>
+        <span style="font-size: 18px;font-family:Helvetica;color: white;padding-left: 15px " > Last Name <br></span>
+        <input type=text placeholder="Enter your Name" name="last_name" style="margin-top:8px"><br>
+        <span style="font-size: 18px;font-family:Helvetica;color: white;padding-left: 15px"  > Contact No. <br></span>
+        <input type=number placeholder="Enter your Contact" name="contact_no" style="margin-top:8px" required><br>
+        <span style="font-size: 18px;font-family:Helvetica ;color: white;padding-left: 15px" > Blood Group <br></span>
+        <select style="border-radius: 7px;padding: 7px;margin: 5px;margin-left:8px ;width: 200px" name="blood_group" required>
+          <option value="a+">A+</option>
+          <option value="a-">A-</option>
+          <option value="b+">B+</option>
+          <option value="b-">B-</option>
+          <option value="o+">O+</option>
+          <option value="o-">O-</option>
+          <option value="ab+">AB+</option>
+          <option value="ab-">AB-</option>
+        </select><br>
+        <span style="font-size: 18px;font-family:Helvetica ;color: white;padding-left: 15px"  > Age <br></span> &nbsp;&nbsp;
+        <input type=number placeholder="Enter your Age" name="age" style="margin-top:8px" required> <br><br><br>
+        
+        <button class="submit_button" type="submit" >Submit</button><br>
+        
+      </form>
+    </div>  
+
+    <div class="find_plasma_form_div" method=POST>  
+      <form action=find_plasma.php>
+        <div style="background-color:#2d292d ;padding-top:10px; padding-bottom:10px; margin:5px; margin-bottom: 10px;" align="center"><span style="font-family: Helvetica;font-size: 20px;color: white"><b>Fill in the Patient's details</b></span></div><hr>
+        <span style="font-size: 18px;font-family:Helvetica ;color: white;padding-left: 15px" > First Name <br></span>
+        <input type=text placeholder="Enter your Name" name="first_name" style="margin-top:8px" required ><br>
+        <span style="font-size: 18px;font-family:Helvetica;color: white;padding-left: 15px"> Last Name <br></span>
+        <input type=text placeholder="Enter your Name" name="last_name" style="margin-top:8px"><br>
+        <span style="font-size: 18px;font-family:Helvetica;color: white;padding-left: 15px" > Contact No. <br></span>
+        <input type=number placeholder="Enter your Contact" name="contact_no" style="margin-top:8px" required ><br>
+        <span style="font-size: 18px;font-family:Helvetica ;color: white;padding-left: 15px"  > Blood Group <br></span>
+        <select style="border-radius: 7px;padding: 7px;;margin: 5px;margin-left:8px;width: 200px" name="blood_group" required>
+          <option value="a+">A+</option>
+          <option value="a-">A-</option>
+          <option value="b+">B+</option>
+          <option value="b-">B-</option>
+          <option value="o+">O+</option>
+          <option value="o-">O-</option>
+          <option value="ab+">AB+</option>
+          <option value="ab-">AB-</option>
+        </select><br>
+        <span style="font-size: 18px;font-family:Helvetica ;color: white;padding-left: 15px"  > Age <br></span>
+        <input type=number placeholder="Enter your Age" name="age" style="margin-top:8px" required> <br>
+
+        <button class="submit_button"  type="submit" style="margin:10px">Submit</button><br>
+        
+      </form>
+    </div>
+
+    <div class="donate_blood_form_div" method=POST>  
+      <form action=donate_blood.php>
+        <div style="background-color:#2d292d ;padding-top:10px; padding-bottom:10px; margin:5px; margin-bottom: 10px;" align="center"><span style="font-family: Helvetica;font-size: 20px;color: white"><b>Fill in the Donor details</b></span></div><hr>
+        <span style="font-size: 18px;font-family:Helvetica ;color: white;padding-left: 15px"  > First Name <br></span>
+        <input type=text placeholder="Enter your Name" name="first_name" style="margin-top:8px" required ><br>
+        <span style="font-size: 18px;font-family:Helvetica;color: white;padding-left: 15px"> Last Name <br></span>
+        <input type=text placeholder="Enter your Name" name="last_name" style="margin-top:8px"><br>
+        <span style="font-size: 18px;font-family:Helvetica;color: white;padding-left: 15px" > Contact No. <br></span>
+        <input type=number placeholder="Enter your Contact" name="contact_no" style="margin-top:8px" required ><br>
+        <span style="font-size: 18px;font-family:Helvetica ;color: white;padding-left: 15px"> Blood Group <br></span>
+        <select style="border-radius: 7px;padding: 7px;;margin: 5px;margin-left:8px;width: 200px" name="blood_group" required >
+          <option value="a+">A+</option>
+          <option value="a-">A-</option>
+          <option value="b+">B+</option>
+          <option value="b-">B-</option>
+          <option value="o+">O+</option>
+          <option value="o-">O-</option>
+          <option value="ab+">AB+</option>
+          <option value="ab-">AB-</option>
+        </select><br>
+        <span style="font-size: 18px;font-family:Helvetica ;color: white;padding-left: 15px"  > Age <br></span>
+        <input type=number placeholder="Enter your Age" name="age" style="margin-top:8px" required> <br>
+
+        <button class="submit_button" type="submit" >Submit</button><br>
+        
+      </form>
+    </div>
+
+
+      <div class="donate_plasma_form_div" method=POST>  
+      <form action=donate_plasma.php>
+        <div style="background-color:#2d292d ;padding-top:10px; padding-bottom:10px; margin:5px; margin-bottom:10px;" align="center"><span style="font-family: Helvetica;font-size: 20px;color: white"><b>Fill in the Donor details</b></span></div><hr>
+
+        <span style="font-size: 15px;font-family:Helvetica ;color: white;padding-left: 15px" > First Name <br></span>
+        <input type=text placeholder="Enter your Name" name="first_name" style="margin-top:8px" required ><br>
+        <span style="font-size: 15px;font-family:Helvetica;color: white;padding-left: 15px"> Last Name <br></span>
+        <input type=text placeholder="Enter your Name" name="last_name" style="margin-top:8px"><br>
+        <span style="font-size: 15px;font-family:Helvetica;color: white;padding-left: 15px" > Contact No. <br></span>
+        <input type=number placeholder="Enter your Contact" name="contact_no" style="margin-top:8px"  required><br>
+
+        <span style="font-size: 15px;font-family:Helvetica ;color: white;padding-left: 15px"> Blood Group <br></span>
+        <select style="border-radius: 7px;padding: 7px;;margin: 5px;margin-left:8px;width: 200px" name="blood_group"  required>
+          <option value="a+">A+</option>
+          <option value="a-">A-</option>
+          <option value="b+">B+</option>
+          <option value="b-">B-</option>
+          <option value="o+">O+</option>
+          <option value="o-">O-</option>
+          <option value="ab+">AB+</option>
+          <option value="ab-">AB-</option>
+        </select><br>
+        <span style="font-size: 15px;font-family:Helvetica ;color: white;padding-left: 15px" > Age <br></span>
+        <input type=number placeholder="Enter your Age" name="age" style="margin-top:8px" required > <br>
+
+        <span style="font-size: 15px;font-family:Helvetica;margin-top:30px;color: white;padding-left: 15px" id="covid_neg_since" > Covid -ve Since <br> &nbsp;&nbsp;&nbsp;</span>
+        <input type=date  name="covid_neg_since_input_feild" id=covid_neg_since_input_feild style="margin-top:8 px; " required > <br>
+        
+        <button class="submit_button" type="submit" >Submit</button><br>
+        
+      </form>
+     </div>
+    </div>
+    <!--________________________________________________________/FORMS____________________________________________________________-->
+
+    <!--________________________________________________________FOOTER____________________________________________________________-->
+    
+    <div class=section_2>
+
+      <div id=section_2_subsection_1>
+
+        <span><h2>Active Cases in India  </h2></span>
+        <span id="active_cases">  </span>
+
+        <span><h2>Recovered Patients</h2></span>
+        <span id="recovered_cases">  </span> 
+
+      </div>
+
+      <div id=section_2_subsection_2>
+
+        <span><h2>Total Cases in India  </h2></span>
+        <span id="total_cases">  </span>
+
+        <span><h2>Total Deaths</h2></span>
+        <span id="total_deaths">  </span> 
+
+      </div>
+
+    </div>
+  <!--________________________________________________________/FOOTER____________________________________________________________-->
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/8.6.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/8.6.1/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+  
+</body>
+</html>
