@@ -1,0 +1,293 @@
+<html>
+<head>
+
+  <script>
+      fetch('https://api.rootnet.in/covid19-in/contacts').then((apidata)=>{
+        console.log(apidata);
+        return apidata.json();
+      }).then( (readable_data)=> {
+         state_name =readable_data.data.contacts.regional[0].loc;
+         helpline = readable_data.data.contacts.regional[0].number;
+         console.log(state_name);
+         console.log(helpline)
+         for(i=1;i<=29;i++)
+         {
+          
+          state_name =readable_data.data.contacts.regional[i].loc;
+          helpline = readable_data.data.contacts.regional[i].number;
+          document.getElementById("state_"+i).innerHTML=state_name;
+          document.getElementById("helpline_"+i).innerHTML=helpline;
+         }
+
+         
+      }).catch((error)=>{
+        console.log(error);
+      })
+      
+      
+     
+  </script>
+  <script>
+  
+  function logout()
+      {
+        window.location.href = "index.html";
+      }
+      
+</script>  
+
+</head> 
+<body>
+	<div class=heading_div> 
+
+      <p>
+        <b> 
+        	  <a id=heading href="home.html">Covid Portal</a> 
+            <button onclick="logout()" class = nav_panel id=logout_button ><label>Log Out</label></button>
+            <a class=nav_panel id=nav_link_1 href="https://dashboard.cowin.gov.in/">Covid Stats</a> 
+            <a class=nav_panel id=nav_link_2 href="https://dashboard.cowin.gov.in/">Vaccinatoin Stats</a> 
+       </b>
+       <div style="background-color: grey;height: 8px;margin-top:18px"><p></p></div>
+      </p>
+       
+    </div>
+
+<style>
+	body 
+    {
+      background-image: url("pic1.jpg");
+      background-size: cover;
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-bottom: 0px;
+      margin-left: 0px  
+    }
+    #heading
+    {
+      text-decoration: none;
+      color: black;
+      font-family: Helvetica;
+      font-size: 70px;
+      padding:13px;
+    }
+
+   .nav_panel
+    {
+      text-decoration: none;
+      color: black;
+      font-family: Helvetica;
+      padding:13px;
+      text-align: center;
+      margin-top: 45px;
+    }
+
+   #nav_link_1
+    {
+      float:right;
+    }
+    #nav_link_2
+    {
+      float:right;
+    }
+    #logout_button
+    {
+      float:right;
+      font-family: Helvetica;
+      margin-top: 50px;
+      padding: 5px;
+      background-color: rgba(45, 41, 45, 0.7);
+      margin-right: 10px;
+      border-radius: 5px;
+    }
+
+    .heading_div
+    {
+     width: 100%;
+     height: 15%;
+     background-color: #ffffff;
+     padding-top: 2px;
+     
+     }
+    table
+    {
+    	border:4px solid black;
+    	border-radius: 6px;
+    	font-family: Helvetica;
+    	border-collapse: collapse;
+       	margin-left: auto;
+        margin-right: auto;
+       	width: 800px;
+    	background-color: rgba(45, 41, 45, 0.7) ;
+      
+      overflow: hidden;
+    }
+    td
+    {
+    border: 2px solid black;
+    padding:20px;
+    color:white;
+    }
+    th
+    {
+    border: 2px solid black;
+    padding:10px;
+    font-size: 16px;
+    color:lightgrey;
+
+    }
+
+    #table_heading_text
+    {
+    	font-family: Helvetica;
+    	font-size: 40px;
+    	margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    	margin-top: 50px;
+    	
+    } 
+    #helpline_table_div
+    {
+      overflow-y: scroll;
+      height: 600px;  
+      width:820px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 50px;
+    }
+    
+
+</style>
+<div id=table_heading_text><span>COVID-19 GOI Helpline</span></div>
+<br>
+<div id="helpline_table_div">
+<table id="mytable">
+	<th>State</th> <th>Helpline</th> 
+  
+ 
+	
+  <tr>
+      <td id="state_1"></td>
+      <td id="helpline_1"></td>
+  </tr>
+  <tr>
+      <td id="state_2"></td>
+      <td id="helpline_2"></td>
+  </tr>
+  <tr>
+      <td id="state_3"></td>
+      <td id="helpline_3"></td>
+  </tr>
+  <tr>
+      <td id="state_4"></td>
+      <td id="helpline_4"></td>
+  </tr>
+  <tr>
+      <td id="state_5"></td>
+      <td id="helpline_5"></td>
+  </tr>
+  <tr>
+      <td id="state_6"></td>
+      <td id="helpline_6"></td>
+  </tr>
+  <tr>
+      <td id="state_7"></td>
+      <td id="helpline_7"></td>
+  </tr>
+  <tr>
+      <td id="state_8"></td>
+      <td id="helpline_8"></td>
+  </tr>
+  <tr>
+      <td id="state_9"></td>
+      <td id="helpline_9"></td>
+  </tr>
+  <tr>
+      <td id="state_10"></td>
+      <td id="helpline_10"></td>
+  </tr>
+  <tr>
+      <td id="state_11"></td>
+      <td id="helpline_11"></td>
+  </tr>
+  <tr>
+      <td id="state_12"></td>
+      <td id="helpline_12"></td>
+  </tr>
+  <tr>
+      <td id="state_13"></td>
+      <td id="helpline_13"></td>
+  </tr>
+  <tr>
+      <td id="state_14"></td>
+      <td id="helpline_14"></td>
+  </tr>
+  <tr>
+      <td id="state_15"></td>
+      <td id="helpline_15"></td>
+  </tr>
+  <tr>
+      <td id="state_16"></td>
+      <td id="helpline_16"></td>
+  </tr>
+  <tr>
+      <td id="state_17"></td>
+      <td id="helpline_17"></td>
+  </tr>
+  <tr>
+      <td id="state_18"></td>
+      <td id="helpline_18"></td>
+  </tr>
+  <tr>
+      <td id="state_19"></td>
+      <td id="helpline_19"></td>
+  </tr>
+  <tr>
+      <td id="state_20"></td>
+      <td id="helpline_20"></td>
+  </tr>
+  <tr>
+      <td id="state_21"></td>
+      <td id="helpline_21"></td>
+  </tr>
+  <tr>
+      <td id="state_22"></td>
+      <td id="helpline_22"></td>
+  </tr>
+  <tr>
+      <td id="state_23"></td>
+      <td id="helpline_23"></td>
+  </tr>
+  <tr>
+      <td id="state_24"></td>
+      <td id="helpline_24"></td>
+  </tr>
+  <tr>
+      <td id="state_25"></td>
+      <td id="helpline_25"></td>
+  </tr>
+  <tr>
+      <td id="state_26"></td>
+      <td id="helpline_26"></td>
+  </tr>
+  <tr>
+      <td id="state_27"></td>
+      <td id="helpline_27"></td>
+  </tr>
+  <tr>
+      <td id="state_28"></td>
+      <td id="helpline_28"></td>
+  </tr>
+   <tr>
+      <td id="state_29"></td>
+      <td id="helpline_29"></td>
+  </tr>
+
+
+  </tr>
+</table>
+</div>
+
+
+</body>
+</html>
