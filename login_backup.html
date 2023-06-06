@@ -1,0 +1,264 @@
+<html>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.js" ></script>
+<script>
+
+function login()
+{
+  var req = new XMLHttpRequest();
+  var user = document.getElementById("user").value;
+  var pass = document.getElementById("pass").value;
+  if(user=="" )
+  {
+    alert("User cannot be Empty");
+    return false;
+  }
+  if(pass=="")
+  {
+    alert("Password cannot be Empty");
+    return false;
+  }
+
+  req.open("GET","http://localhost/codes/Project/login_check.php?user="+user+"&pass="+pass,true);
+  req.send();
+
+  req.onreadystatechange = function()
+  {
+      if(this.readyState == 4 & this.status == 200)
+      {
+
+        if((this.responseText)==1)
+        {
+        window.location.href = "index.html";
+        }
+        else
+        {
+          alert("Wrong Username or Password");
+        }
+    }
+  }
+ }
+ function sign_up()
+ {
+  var req=new XMLHttpRequest;
+  var new_user = document.getElementById("new_user").value;
+  var email = document.getElementById("email").value;
+  var new_pass = document.getElementById("new_pass").value;
+  if(new_user=="" )
+  {
+    alert("User cannot be Empty");
+    return false;
+  }
+  if(new_pass=="")
+  {
+    alert("Password cannot be Empty");
+    return false;
+  }
+  if(email=="")
+  {
+    alert("Email cannot be Empty");
+    return false;
+  }
+
+  req.open("GET","http://localhost/codes/Project/create_account.php?user="+new_user+"&pass="+new_pass+"&email="+email,true);
+  req.send();
+
+  req.onreadystatechange = function()
+  { 
+    
+    if(this.responseText==1)
+    { 
+      window.location.href="index.html";
+    }
+    else
+    {
+      alert("W")
+    }
+  }
+ }
+
+</script>
+
+<script>
+$(document).ready(function(){
+
+    $("#create_account").click(function(){
+      $("#login_form_div").slideUp(1000,function(){
+        $("#signup_form_div").slideDown(1000);
+      })
+    });
+
+  }); 
+</script>
+
+
+<style>
+
+    body 
+    {
+      background-image: url("pic1.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-bottom: 0px;
+      margin-left: 0px  
+    }
+    html
+    {
+      scroll-behavior: smooth;
+    }
+
+    #heading
+    {
+      text-decoration: none;
+      color: black;
+      font-family: Helvetica;
+      font-size: 70px;
+      padding:13px;
+    }
+
+    .nav_panel
+    {
+      text-decoration: none;
+      color: black;
+      font-family: Helvetica;
+      padding:13px;
+      text-align: center;
+      margin-top: 45px;
+    }
+    #nav_link_1
+    {
+      float:right;
+    }
+    #nav_link_2
+    {
+      float:right;
+    }
+
+    .heading_div
+    {
+     width: 100%;
+     height: 15%;
+     background-color: #ffffff;
+     padding-top: 2px;
+    }
+
+    #login_form_div
+    {
+      border: 5px solid grey;
+      background-color: rgba(45, 41, 45, 0.7);
+      border-radius: 10px;
+      width:400px;
+      height:450px;
+
+      margin-top: 40px;
+      margin-left: 470px;
+      padding:20px;
+      padding-top: 10px;
+      padding-left: 30px;
+      justify-content: center;
+      text-align: center;
+    }
+    #signup_form_div
+    {
+      border: 5px solid grey;
+      background-color: rgba(45, 41, 45, 0.7);
+      border-radius: 10px;
+      width:400px;
+      height:450px;
+
+      margin-top: 40px;
+      margin-left: 470px;
+      padding:20px;
+      padding-top: 10px;
+      padding-left: 30px;
+      justify-content: center;
+      text-align: center;
+    }
+    .form_head_div
+    {
+      background-color:#2d292d; 
+      padding-top:10px; 
+      padding-bottom:10px;
+      margin:5px;
+      margin-bottom:10px;
+      font-family: Helvetica;
+      font-size: 20px;
+      color: white;
+      width:380px;
+    }
+     input[type=text]
+    {
+      padding:5px;
+      margin-top:3px;
+      margin: 3px;
+      border-radius:9px;
+      overflow: hidden;
+      width: 350px;
+    }
+    input[type=submit]
+    {
+      color: white; 
+      border:2px solid white;
+      background-color:#2d292d; 
+      font-family:Helvetica; 
+      font-size: 15px; 
+      opacity: 0.9;
+      border-radius: 2px;
+      margin: 7px;
+      padding: 5px;
+      justify-content: center;
+      width: 150px;
+    }
+
+
+     
+</style>
+
+
+<body>
+<div class=heading_div> 
+
+      <p>
+        <b> <a id=heading href="login.html">Covid Portal</a> 
+            <a class=nav_panel id=nav_link_1 href="https://dashboard.cowin.gov.in/">Covid Stats</a> 
+            <a class=nav_panel id=nav_link_2 href="https://dashboard.cowin.gov.in/">Vaccinatoin Stats</a> 
+       </b>
+       <div style="background-color: black;height: 8px;margin-top:18px"><p></p></div>
+      </p>
+       
+    </div>
+
+
+
+<div id="login_form_div" >
+  <div class=form_head_div align=center>Log In</div>
+    <from id="login_from" >
+      <input type=text name='user' id='user' placeholder=Username style="margin:10px" required  maxlength="25">
+      <input type=text name='pass' id='pass' placeholder=Password style="margin:10px" required  maxlength="25">
+      <br>
+      <div style="margin-top: 160px">
+      <input type=submit onclick="login()">
+      <br>
+      <span style="color:white; font-family:Helvetica ">Or</span>
+      <br>
+      <input type=submit id=create_account value = "Create Account">
+      </div>
+    </form>
+</div>
+<div id="signup_form_div" style="display: none">
+  <div class=form_head_div align=center>Sign Up</div>
+    <from id="signup_from" >
+      <input type="text" name='user' id='new_user' placeholder="Enter Username" style="margin:10px" required  maxlength="25">
+      <input type="email" name='email' id='email' placeholder="Enter email-ID" style="margin:10px" required minlength="6" maxlength="50">
+      <input type="text" name='pass' id='new_pass' placeholder="Enter Password" style="margin:10px" required  maxlength="25">
+      <br>
+      <input type=submit id=sign_up value="Sign Up" onclick="sign_up()">
+      <br>
+    </form>
+</div>
+
+
+</body>
+
+</html>

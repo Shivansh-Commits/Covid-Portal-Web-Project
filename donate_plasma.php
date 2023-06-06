@@ -19,8 +19,8 @@
         <b> 
         	<a id=heading href="home.html">Covid Portal</a> 
         	<button onclick="logout()" class = nav_panel id=logout_button ><label>Log Out</label></button>
-            <a class=nav_panel id=nav_link_1 href="https://dashboard.cowin.gov.in/">Covid Statistics</a> 
-            <a class=nav_panel id=nav_link_2 href="https://www.cowin.gov.in/home">Book Vaccinatoin Slots</a>  
+            <a class=nav_panel id=nav_link_1 href="https://dashboard.cowin.gov.in/">Covid Stats</a> 
+            <a class=nav_panel id=nav_link_2 href="https://dashboard.cowin.gov.in/">Vaccinatoin Stats</a>  
        </b>
        <div style="background-color: grey;height: 8px;margin-top:18px"><p></p></div>
       </p>
@@ -144,7 +144,7 @@
 
 <?php
 
-$username="user1";
+$username="only_owner";
 $password="56IC%.ww9Dv3";
 $database="covid_portal";
 $con=mysqli_connect('localhost',$username,$password,$database) or die("Connection Failed". mysqli_connect_error());

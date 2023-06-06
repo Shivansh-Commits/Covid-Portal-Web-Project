@@ -2,9 +2,9 @@
 <head>
   <title>Covid Portal </title> 
   <link rel = "shortcut icon" href="favicon.ico" type="image/x-icon"/>
-  <meta charset="UTF-8">
+	<meta charset="UTF-8">
   <meta name="description" content="shivansh singh">
-  <meta name="keywords" content="covid19 resources,covid19,covid portal">
+  <meta name="keywords" content="shivansh,shiva,shivansh singh">
   <meta name="author" content="Shivansh Singh Bhadouria">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
@@ -29,7 +29,7 @@
 
       function logout()
       {
-        window.location.href = "index.html";
+        window.location.href = "login.html";
       }
   </script>
 
@@ -127,11 +127,11 @@
 
 
         $(".submit_button").mouseenter(function(){
-            $(this).animate({fontSize:"1.2em",width:"165px",color:"white"},250);
+            $(this).animate({fontSize:"1.4em",opacity:"1",height:"30px",color:"white"},250);
           return false;
         });
         $(".submit_button").mouseleave(function(){
-            $(this).animate({fontSize:"1.0em",width:"150px"},250);
+            $(this).animate({fontSize:"1.2em",opacity:"0.8",height:"28px"},250);
           return false;
         });
 
@@ -393,7 +393,7 @@
       color: white;
       float:right;
     }
-  </style>  
+  </style>	
 
 
 <body>
@@ -403,7 +403,7 @@
     <div class=heading_div> 
 
       <p>
-        <b> <a id=heading href="home.html">Covid Portal</a> 
+        <b> <a id=heading href="index.html">Covid Portal</a> 
             <button onclick="logout()" class = nav_panel id=logout_button ><label>Log Out</label></button>
             <a class=nav_panel id=nav_link_1 href="https://dashboard.cowin.gov.in/">Covid Stats</a> 
             <a class=nav_panel id=nav_link_2 href="https://dashboard.cowin.gov.in/">Vaccinatoin Stats</a> 
